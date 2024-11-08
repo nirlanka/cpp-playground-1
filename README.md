@@ -2,11 +2,12 @@
 
 Setup:
 ```sh
-meson build-clang --cross-file mygcc.txt
 mkdir subprojects
 
 # Install fmt package
 meson wrap install fmt
+
+meson build-clang --cross-file gcc.txt
 cp build-clang/compile_commands.json .
 
 # Build:

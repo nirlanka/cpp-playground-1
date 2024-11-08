@@ -1,0 +1,21 @@
+project('promise_cpp', 'cpp',
+  default_options: ['cpp_std=c++11'],
+  )
+
+promisecpp_lib = library(
+  'promise_cpp',
+  'src/promise.cpp',
+  include_directories: 'include',
+  install: true,
+  )
+
+install_subdir('include',
+  strip_directory: true,
+  install_dir: get_option('includedir'),
+  )
+
+promisecpp_dep = declare_dependency(
+  include_directories: 'include',
+  link_with: promisecpp_lib,
+  )
+

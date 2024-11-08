@@ -11,6 +11,9 @@ meson wrap install fmt
 cd subprojects
 git clone https://github.com/chriskohlhoff/asio
 cd ..
+mv subprojects/asio subprojects/asio--github
+mv subprojects/asio--github/asio subprojects/asio
+rm -rf subprojects/asio--github
 cp subprojects/promise-cpp-meson.build.bup subprojects/promise-cpp/meson.build
 meson wrap install promise-cpp
 

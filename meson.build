@@ -12,11 +12,10 @@ incs = [
 subdir('src')
 
 # dependencies:
-fmt = subproject('fmt')
-fmt_dep = fmt.get_variable('fmt_dep')
-
 deps = [
-  fmt_dep,
+  subproject('fmt').get_variable('fmt_dep'),
+  subproject('promise-cpp').get_variable('promisecpp_dep'),
+
   ]
 
 libs = [

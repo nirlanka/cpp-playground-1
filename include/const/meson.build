@@ -1,0 +1,1 @@
+incs += files('texts.h')
